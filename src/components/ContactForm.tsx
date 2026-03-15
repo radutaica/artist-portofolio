@@ -46,7 +46,7 @@ export default function ContactForm() {
           value={form.name}
           onChange={handleChange}
           placeholder="Your name"
-          className="w-full px-4 py-3 rounded-lg border border-neutral-300 text-sm text-neutral-900 placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-neutral-900 focus:border-transparent transition"
+          className="w-full px-4 py-3 rounded-none border border-neutral-200 text-sm text-neutral-900 placeholder-neutral-400 focus:outline-none focus:border-[#222222] transition"
         />
       </div>
 
@@ -62,7 +62,7 @@ export default function ContactForm() {
           value={form.email}
           onChange={handleChange}
           placeholder="you@example.com"
-          className="w-full px-4 py-3 rounded-lg border border-neutral-300 text-sm text-neutral-900 placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-neutral-900 focus:border-transparent transition"
+          className="w-full px-4 py-3 rounded-none border border-neutral-200 text-sm text-neutral-900 placeholder-neutral-400 focus:outline-none focus:border-[#222222] transition"
         />
       </div>
 
@@ -78,13 +78,13 @@ export default function ContactForm() {
           value={form.message}
           onChange={handleChange}
           placeholder="Tell me about your project or inquiry..."
-          className="w-full px-4 py-3 rounded-lg border border-neutral-300 text-sm text-neutral-900 placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-neutral-900 focus:border-transparent transition resize-none"
+          className="w-full px-4 py-3 rounded-none border border-neutral-200 text-sm text-neutral-900 placeholder-neutral-400 focus:outline-none focus:border-[#222222] transition resize-none"
         />
       </div>
 
       <button
         type="submit"
-        className="bg-neutral-900 text-white px-8 py-3.5 rounded-full text-sm font-medium hover:bg-neutral-700 transition-colors self-start"
+        className="bg-[#222222] text-white px-8 py-3.5 rounded-none text-sm font-medium hover:bg-neutral-700 transition-colors self-start"
       >
         Send Message
       </button>

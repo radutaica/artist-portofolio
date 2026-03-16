@@ -1,48 +1,59 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import Image from "next/image";
 import { useState } from "react";
 
-const links = [
-  { href: "/", label: "Home" },
-  { href: "/gallery", label: "Gallery" },
+const allLinks = [
+  { href: "/", label: "Work" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
 ];
 
+const leftLinks = allLinks.slice(0, 2);
+const rightLinks = allLinks.slice(2);
+
 export default function Navbar() {
-  const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <nav className="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-neutral-200">
-      <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-        <Link href="/" className="text-xl font-semibold tracking-tight text-neutral-900">
-          Artist Portfolio
+    <nav className="bg-background">
+      {/* Desktop */}
+      <div className="hidden md:block px-10 h-16">
+        <div className="nav-split w-full h-full">
+          <ul className="nav-left flex gap-8">
+            {leftLinks.map(({ href, label }) => (
+              <li key={href}>
+                <Link href={href} className="text-sm text-neutral-500 hover:text-[#12273F] transition-colors">
+                  {label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+          <div className="nav-logo">
+            <Link href="/">
+              <Image src="/assets/dart/logo dart.png" alt="Dart logo" width={40} height={14} className="object-contain" />
+            </Link>
+          </div>
+          <ul className="nav-right flex gap-8">
+            {rightLinks.map(({ href, label }) => (
+              <li key={href}>
+                <Link href={href} className="text-sm text-neutral-500 hover:text-[#12273F] transition-colors">
+                  {label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+
+      {/* Mobile */}
+      <div className="md:hidden px-10 h-16 flex items-center justify-between">
+        <Link href="/">
+          <Image src="/assets/dart/logo dart.png" alt="Dart logo" width={40} height={14} className="object-contain h-[14px] w-auto" />
         </Link>
-
-        {/* Desktop links */}
-        <ul className="hidden md:flex gap-8">
-          {links.map(({ href, label }) => (
-            <li key={href}>
-              <Link
-                href={href}
-                className={`text-sm font-medium transition-colors hover:text-neutral-900 ${
-                  pathname === href
-                    ? "text-neutral-900 border-b-2 border-neutral-900 pb-0.5"
-                    : "text-neutral-500"
-                }`}
-              >
-                {label}
-              </Link>
-            </li>
-          ))}
-        </ul>
-
-        {/* Mobile hamburger */}
         <button
-          className="md:hidden p-2 text-neutral-700"
+          className="p-2 text-neutral-700"
           aria-label="Toggle menu"
           onClick={() => setMenuOpen((o) => !o)}
         >
@@ -58,17 +69,14 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Mobile menu */}
       {menuOpen && (
-        <ul className="md:hidden border-t border-neutral-200 bg-white px-6 py-4 flex flex-col gap-4">
-          {links.map(({ href, label }) => (
+        <ul className="md:hidden bg-background px-10 py-4 flex flex-col gap-4">
+          {allLinks.map(({ href, label }) => (
             <li key={href}>
               <Link
                 href={href}
                 onClick={() => setMenuOpen(false)}
-                className={`text-sm font-medium ${
-                  pathname === href ? "text-neutral-900" : "text-neutral-500"
-                }`}
+                className="text-sm text-neutral-500 hover:text-[#12273F] transition-colors"
               >
                 {label}
               </Link>

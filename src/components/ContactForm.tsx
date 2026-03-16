@@ -20,11 +20,11 @@ export default function ContactForm() {
     return (
       <div className="text-center py-12">
         <div className="text-4xl mb-4">✓</div>
-        <h3 className="text-xl font-semibold text-neutral-900 mb-2">Message Sent!</h3>
+        <h3 className="text-xl font-semibold text-[#12273F] mb-2">Message Sent!</h3>
         <p className="text-neutral-500">Thank you for reaching out. I&apos;ll get back to you soon.</p>
         <button
           onClick={() => { setSubmitted(false); setForm({ name: "", email: "", message: "" }); }}
-          className="mt-6 text-sm text-neutral-500 underline underline-offset-2 hover:text-neutral-900"
+          className="mt-6 text-sm text-neutral-500 underline underline-offset-2 hover:text-[#12273F]"
         >
           Send another message
         </button>
@@ -46,7 +46,7 @@ export default function ContactForm() {
           value={form.name}
           onChange={handleChange}
           placeholder="Your name"
-          className="w-full px-4 py-3 rounded-lg border border-neutral-300 text-sm text-neutral-900 placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-neutral-900 focus:border-transparent transition"
+          className="w-full px-4 py-3 rounded-none border border-neutral-200 text-sm text-[#12273F] placeholder-neutral-400 focus:outline-none focus:border-[#12273F] transition"
         />
       </div>
 
@@ -62,7 +62,7 @@ export default function ContactForm() {
           value={form.email}
           onChange={handleChange}
           placeholder="you@example.com"
-          className="w-full px-4 py-3 rounded-lg border border-neutral-300 text-sm text-neutral-900 placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-neutral-900 focus:border-transparent transition"
+          className="w-full px-4 py-3 rounded-none border border-neutral-200 text-sm text-[#12273F] placeholder-neutral-400 focus:outline-none focus:border-[#12273F] transition"
         />
       </div>
 
@@ -78,13 +78,13 @@ export default function ContactForm() {
           value={form.message}
           onChange={handleChange}
           placeholder="Tell me about your project or inquiry..."
-          className="w-full px-4 py-3 rounded-lg border border-neutral-300 text-sm text-neutral-900 placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-neutral-900 focus:border-transparent transition resize-none"
+          className="w-full px-4 py-3 rounded-none border border-neutral-200 text-sm text-[#12273F] placeholder-neutral-400 focus:outline-none focus:border-[#12273F] transition resize-none"
         />
       </div>
 
       <button
         type="submit"
-        className="bg-neutral-900 text-white px-8 py-3.5 rounded-full text-sm font-medium hover:bg-neutral-700 transition-colors self-start"
+        className="bg-[#12273F] text-white px-8 py-3.5 rounded-none text-sm font-medium hover:bg-[#1e3a5f] transition-colors self-start"
       >
         Send Message
       </button>

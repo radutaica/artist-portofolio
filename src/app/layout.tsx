@@ -1,16 +1,22 @@
 import type { Metadata } from "next";
-import { Geist } from "next/font/google";
+import { Inter, Michroma } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-const geist = Geist({
-  variable: "--font-geist-sans",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
 });
 
+const michroma = Michroma({
+  variable: "--font-stretch-pro",
+  subsets: ["latin"],
+  weight: "400",
+});
+
 export const metadata: Metadata = {
-  title: "Alexandra Moreau — Artist Portfolio",
+  title: "Daria Dascal — Artist Portfolio",
   description: "Visual artist and photographer exploring light, form, and emotion.",
 };
 
@@ -21,7 +27,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geist.variable} antialiased font-sans`}>
+      <body className={`${inter.variable} ${michroma.variable} antialiased font-sans`}>
         <Navbar />
         <main>{children}</main>
         <Footer />

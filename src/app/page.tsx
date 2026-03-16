@@ -12,9 +12,8 @@ export default function Home() {
           playsInline
           className="w-full h-[55vh] object-contain border border-neutral-200 shadow-lg"
         /> */}
-        <p className="font-serif italic text-sm text-neutral-500 leading-relaxed max-w-xl md:max-w-3xl text-center">
-          — Daria Dascal is a visual artist, photographer, and light-chaser based in Paris,
-          exploring form, emotion, and the quiet drama of the everyday.
+        <p className="italic text-sm text-neutral-500 leading-relaxed max-w-xl md:max-w-3xl text-center">
+          — Daria Dascal is a visual designer, focused on branding and concept driven graphic design.
         </p>
       </div>
       <GalleryGrid />

@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { works, getWorkBySlug } from "@/lib/works";
 import VideoPlayer from "@/components/VideoPlayer";
+import YouTubePlayer from "@/components/YouTubePlayer";
 
 export function generateStaticParams() {
   return works.map((w) => ({ slug: w.slug }));
@@ -47,7 +48,14 @@ export default async function WorkPage({ params }: { params: Promise<{ slug: str
           <div key={i} className={slide.layout === "full" ? "w-full" : "max-w-3xl mx-auto w-full px-10"}>
             <div className={`relative overflow-hidden bg-neutral-100 ${slide.layout === "full" ? "aspect-[16/9]" : "aspect-[3/4]"}`}>
               {slide.type === "video" ? (
-                slide.hasSound ? (
+                slide.url.includes("youtube.com") || slide.url.includes("youtu.be") ? (
+                  <YouTubePlayer videoId={(() => {
+                    const u = new URL(slide.url);
+                    if (u.pathname.includes("/shorts/")) return u.pathname.split("/shorts/")[1];
+                    if (u.hostname === "youtu.be") return u.pathname.slice(1);
+                    return u.searchParams.get("v")!;
+                  })()} />
+                ) : slide.hasSound ? (
                   <VideoPlayer src={slide.url} />
                 ) : (
                   <video

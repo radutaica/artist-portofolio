@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Zen_Dots } from "next/font/google";
+import { Inter, Michroma } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -9,7 +9,7 @@ const inter = Inter({
   subsets: ["latin"],
 });
 
-const zenDots = Zen_Dots({
+const michroma = Michroma({
   variable: "--font-stretch-pro",
   subsets: ["latin"],
   weight: "400",
@@ -27,7 +27,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${zenDots.variable} antialiased font-sans`}>
+      <body className={`${inter.variable} ${michroma.variable} antialiased font-sans`}>
         <Navbar />
         <main>{children}</main>
         <Footer />

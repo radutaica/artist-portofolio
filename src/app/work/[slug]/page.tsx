@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { works, getWorkBySlug } from "@/lib/works";
+import VideoPlayer from "@/components/VideoPlayer";
 
 export function generateStaticParams() {
   return works.map((w) => ({ slug: w.slug }));
@@ -28,12 +29,16 @@ export default async function WorkPage({ params }: { params: Promise<{ slug: str
   return (
     <div>
       {/* Title + description */}
-      <div className="px-10 py-16 max-w-3xl mx-auto text-center">
+      <div className="px-10 py-16 w-full text-center">
         <p className="text-xs uppercase tracking-widest text-neutral-400 mb-4">{work.category}</p>
         <h1 className="font-serif text-5xl md:text-6xl font-light text-[#12273F] mb-8 leading-tight uppercase">
           {work.title}
         </h1>
-        <p className="text-sm text-neutral-500 leading-relaxed">{work.description}</p>
+        <div className="flex flex-col gap-4 text-sm text-neutral-500 leading-relaxed">
+          {work.description.split("\n\n").map((para, i) => (
+            <p key={i}>{para}</p>
+          ))}
+        </div>
       </div>
 
       {/* Slides */}
@@ -42,14 +47,18 @@ export default async function WorkPage({ params }: { params: Promise<{ slug: str
           <div key={i} className={slide.layout === "full" ? "w-full" : "max-w-3xl mx-auto w-full px-10"}>
             <div className={`relative overflow-hidden bg-neutral-100 ${slide.layout === "full" ? "aspect-[16/9]" : "aspect-[3/4]"}`}>
               {slide.type === "video" ? (
-                <video
-                  src={slide.url}
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  className="w-full h-full object-cover"
-                />
+                slide.hasSound ? (
+                  <VideoPlayer src={slide.url} />
+                ) : (
+                  <video
+                    src={slide.url}
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    className="w-full h-full object-cover"
+                  />
+                )
               ) : (
                 <Image
                   src={slide.url}

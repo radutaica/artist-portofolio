@@ -11,13 +11,13 @@ export default function AboutPage() {
     <div className="px-10 py-16">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-start">
         {/* Photo */}
-        <div className="relative aspect-[3/4] overflow-hidden">
+        <div className="overflow-hidden">
           <Image
             src="/assets/dart/Me 2.png"
             alt="Daria Dascal"
-            fill
-            className="object-cover mix-blend-multiply"
-            sizes="(max-width: 768px) 100vw, 50vw"
+            width={600}
+            height={800}
+            className="w-full mix-blend-multiply -mt-[28%]"
           />
         </div>
 

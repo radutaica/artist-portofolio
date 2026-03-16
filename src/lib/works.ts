@@ -13,10 +13,10 @@ export const works: Work[] = [
     id: 3,
     slug: "restem-010",
     title: "Restem 010",
-    category: "Branding",
+    category: "Flower studio branding",
     description:
-      "A brand identity for Restem 010 — a studio clothing line that bridges archival research and contemporary silhouette.",
-    cover: "/assets/Restem 010/RESTEM 010 BRAND GUIDE.png",
+      "Flower studio branding.",
+    cover: "/assets/Restem 010/home.png",
     slides: [
       { url: "/assets/Restem 010/RESTEM 010 BRAND GUIDE.png", layout: "full" },
       { url: "/assets/Restem 010/Restem010 brand guide-01.png", layout: "full" },
@@ -36,10 +36,10 @@ export const works: Work[] = [
     id: 2,
     slug: "fir",
     title: "FIR",
-    category: "Branding",
+    category: "Coffee shop branding",
     description:
-      "Visual identity for FIR — a concept café built around the idea of the forest as a place of gathering, slowness, and ritual.",
-    cover: "/assets/FIR/FIR BRAND GUIDE-09.png",
+      "Coffee shop branding.",
+    cover: "/assets/FIR/home.jpg",
     slides: [
       { url: "/assets/FIR/FIR BRAND GUIDE-09.png", layout: "full" },
       { url: "/assets/FIR/FIR cafenea guide.png", layout: "full" },
@@ -59,10 +59,10 @@ export const works: Work[] = [
     id: 1,
     slug: "bear",
     title: "Bear",
-    category: "Branding",
+    category: "Honey branding",
     description:
-      "A brand identity built around warmth and craft — rooted in natural textures, hand-drawn type, and a palette drawn from the forest floor.",
-    cover: "/assets/Bear/bear brand guide.png",
+      "Honey branding.",
+    cover: "/assets/Bear/home.jpg",
     slides: [
       { url: "/assets/Bear/bear brand guide.png", layout: "full" },
       { url: "/assets/Bear/ChatGPT Image Mar 12, 2026 at 04_00_28 PM.png", layout: "full" },
@@ -76,10 +76,10 @@ export const works: Work[] = [
     id: 4,
     slug: "day-and-night",
     title: "day & night",
-    category: "Art Direction",
+    category: "Installation",
     description:
-      "An art direction project exploring the duality of light — the charged stillness of late afternoon against the quiet weight of night.",
-    cover: "/assets/day & night/Untitled_Artwork 13.png",
+      "Installation.",
+    cover: "/assets/day & night/home.jpg",
     slides: [
       { url: "/assets/day & night/Untitled_Artwork 13.png", layout: "full" },
       { url: "/assets/day & night/Untitled_Artwork 4 copy.png", layout: "full" },

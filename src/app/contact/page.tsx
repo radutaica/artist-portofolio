@@ -1,8 +1,8 @@
 import ContactForm from "@/components/ContactForm";
 
 export const metadata = {
-  title: "Contact — Alexandra Moreau",
-  description: "Get in touch with Alexandra Moreau for commissions, exhibitions, or collaborations.",
+  title: "Contact — Daria Dascal",
+  description: "Get in touch with Daria Dascal for commissions, exhibitions, or collaborations.",
 };
 
 export default function ContactPage() {
@@ -12,7 +12,7 @@ export default function ContactPage() {
         {/* Info */}
         <div>
           <p className="text-xs uppercase tracking-widest text-neutral-400 mb-2">Contact</p>
-          <h1 className="font-serif text-5xl font-light text-[#222222] mb-6">
+          <h1 className="font-serif text-5xl font-light text-[#12273F] mb-6">
             Let&apos;s Work<br />Together
           </h1>
           <p className="text-sm text-neutral-500 leading-relaxed mb-10">

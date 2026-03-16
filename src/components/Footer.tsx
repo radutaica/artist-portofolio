@@ -1,13 +1,13 @@
 export default function Footer() {
   return (
-    <footer className="bg-white">
+    <footer className="bg-background">
       <div className="px-10 py-6 flex justify-between items-center text-xs text-neutral-400">
-        <p>&copy; {new Date().getFullYear()} Alexandra Moreau</p>
+        <p>&copy; {new Date().getFullYear()} Daria Dascal</p>
         <div className="flex gap-6">
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-neutral-900 transition-colors">
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#12273F] transition-colors">
             Instagram
           </a>
-          <a href="mailto:hello@alexandramoreau.art" className="hover:text-neutral-900 transition-colors">
+          <a href="mailto:hello@alexandramoreau.art" className="hover:text-[#12273F] transition-colors">
             Email
           </a>
         </div>

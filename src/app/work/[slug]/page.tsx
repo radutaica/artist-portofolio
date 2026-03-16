@@ -12,7 +12,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const work = getWorkBySlug(slug);
   if (!work) return {};
   return {
-    title: `${work.title} — Alexandra Moreau`,
+    title: `${work.title} — Daria Dascal`,
     description: work.description,
   };
 }
@@ -30,7 +30,7 @@ export default async function WorkPage({ params }: { params: Promise<{ slug: str
       {/* Title + description */}
       <div className="px-10 py-16 max-w-3xl mx-auto text-center">
         <p className="text-xs uppercase tracking-widest text-neutral-400 mb-4">{work.category}</p>
-        <h1 className="font-serif text-5xl md:text-6xl font-light text-[#222222] mb-8 leading-tight">
+        <h1 className="font-serif text-5xl md:text-6xl font-light text-[#12273F] mb-8 leading-tight uppercase">
           {work.title}
         </h1>
         <p className="text-sm text-neutral-500 leading-relaxed">{work.description}</p>
@@ -61,7 +61,7 @@ export default async function WorkPage({ params }: { params: Promise<{ slug: str
               )}
             </div>
             {slide.caption && (
-              <p className="font-serif text-2xl md:text-3xl font-light text-[#222222] leading-snug mt-10 max-w-xl mx-auto text-center px-10">
+              <p className="font-serif text-2xl md:text-3xl font-light text-[#12273F] leading-snug mt-10 max-w-xl mx-auto text-center px-10">
                 {slide.caption}
               </p>
             )}
@@ -77,7 +77,7 @@ export default async function WorkPage({ params }: { params: Promise<{ slug: str
             <Link
               key={other.id}
               href={`/work/${other.slug}`}
-              className="font-serif text-xl font-light text-neutral-400 hover:text-[#222222] transition-colors"
+              className="font-serif text-xl font-light text-neutral-400 hover:text-[#12273F] transition-colors"
             >
               {other.title}
             </Link>

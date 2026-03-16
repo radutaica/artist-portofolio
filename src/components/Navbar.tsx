@@ -1,12 +1,12 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 
 const allLinks = [
   { href: "/", label: "Work" },
   { href: "/about", label: "About" },
-  { href: "/gallery", label: "Gallery" },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -17,28 +17,28 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <nav className="bg-white">
+    <nav className="bg-background">
       {/* Desktop */}
       <div className="hidden md:block px-10 h-16">
         <div className="nav-split w-full h-full">
           <ul className="nav-left flex gap-8">
             {leftLinks.map(({ href, label }) => (
               <li key={href}>
-                <Link href={href} className="text-sm text-neutral-500 hover:text-[#222222] transition-colors">
+                <Link href={href} className="text-sm text-neutral-500 hover:text-[#12273F] transition-colors">
                   {label}
                 </Link>
               </li>
             ))}
           </ul>
           <div className="nav-logo">
-            <Link href="/" className="font-serif text-xl font-light text-[#222222]">
-              Moreau
+            <Link href="/">
+              <Image src="/assets/dart/logo dart.png" alt="Dart logo" width={40} height={14} className="object-contain" />
             </Link>
           </div>
           <ul className="nav-right flex gap-8">
             {rightLinks.map(({ href, label }) => (
               <li key={href}>
-                <Link href={href} className="text-sm text-neutral-500 hover:text-[#222222] transition-colors">
+                <Link href={href} className="text-sm text-neutral-500 hover:text-[#12273F] transition-colors">
                   {label}
                 </Link>
               </li>
@@ -49,7 +49,7 @@ export default function Navbar() {
 
       {/* Mobile */}
       <div className="md:hidden px-10 h-16 flex items-center justify-between">
-        <Link href="/" className="font-serif text-xl font-light text-[#222222]">
+        <Link href="/" className="font-serif text-xl font-light text-[#12273F]">
           Moreau
         </Link>
         <button
@@ -70,13 +70,13 @@ export default function Navbar() {
       </div>
 
       {menuOpen && (
-        <ul className="md:hidden bg-white px-10 py-4 flex flex-col gap-4">
+        <ul className="md:hidden bg-background px-10 py-4 flex flex-col gap-4">
           {allLinks.map(({ href, label }) => (
             <li key={href}>
               <Link
                 href={href}
                 onClick={() => setMenuOpen(false)}
-                className="text-sm text-neutral-500 hover:text-[#222222] transition-colors"
+                className="text-sm text-neutral-500 hover:text-[#12273F] transition-colors"
               >
                 {label}
               </Link>

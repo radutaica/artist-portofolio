@@ -2,8 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const metadata = {
-  title: "About — Alexandra Moreau",
-  description: "Learn more about Alexandra Moreau, visual artist and photographer.",
+  title: "About — Daria Dascal",
+  description: "Learn more about Daria Dascal, visual artist and photographer.",
 };
 
 export default function AboutPage() {
@@ -14,7 +14,7 @@ export default function AboutPage() {
         <div className="relative aspect-[3/4] overflow-hidden bg-neutral-100">
           <Image
             src="https://picsum.photos/seed/portrait/600/800"
-            alt="Alexandra Moreau"
+            alt="Daria Dascal"
             fill
             className="object-cover"
             sizes="(max-width: 768px) 100vw, 50vw"
@@ -25,7 +25,7 @@ export default function AboutPage() {
         <div className="flex flex-col justify-center gap-6">
           <div>
             <p className="text-xs uppercase tracking-widest text-neutral-400 mb-2">About Me</p>
-            <h1 className="font-serif text-5xl font-light text-[#222222]">Alexandra Moreau</h1>
+            <h1 className="font-serif text-5xl font-light text-[#12273F]">Daria Dascal</h1>
           </div>
 
           <div className="flex flex-col gap-4 text-sm text-neutral-500 leading-relaxed">
@@ -49,7 +49,7 @@ export default function AboutPage() {
 
           <Link
             href="/contact"
-            className="inline-block border border-[#222222] text-[#222222] px-8 py-3.5 rounded-none text-sm font-medium hover:bg-[#222222] hover:text-white transition-colors self-start mt-2"
+            className="inline-block border border-[#12273F] text-[#12273F] px-8 py-3.5 rounded-none text-sm font-medium hover:bg-[#12273F] hover:text-white transition-colors self-start mt-2"
           >
             Get in Touch
           </Link>

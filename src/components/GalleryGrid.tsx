@@ -17,10 +17,10 @@ export default function GalleryGrid() {
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/50 transition-colors duration-300 flex items-end p-6">
-                  <div className="translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
-                    <p className="font-serif text-2xl md:text-3xl font-light text-white">{work.title}</p>
-                    <p className="text-xs text-white/70 uppercase tracking-widest mt-0.5">{work.category}</p>
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/50 transition-colors duration-300 flex items-center justify-center p-6">
+                  <div className="translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 text-center">
+                    <p className="font-serif text-4xl md:text-5xl font-light text-white uppercase">{work.title}</p>
+                    <p className="text-xs text-white/70 uppercase tracking-widest mt-2">{work.category}</p>
                   </div>
                 </div>
               </div>

@@ -41,13 +41,24 @@ export default async function WorkPage({ params }: { params: Promise<{ slug: str
         {work.slides.map((slide, i) => (
           <div key={i} className={slide.layout === "full" ? "w-full" : "max-w-3xl mx-auto w-full px-10"}>
             <div className={`relative overflow-hidden bg-neutral-100 ${slide.layout === "full" ? "aspect-[16/9]" : "aspect-[3/4]"}`}>
-              <Image
-                src={`https://picsum.photos/seed/${slide.seed}/${slide.layout === "full" ? "1920/1080" : "900/1200"}`}
-                alt={`${work.title} — slide ${i + 1}`}
-                fill
-                className="object-cover"
-                sizes={slide.layout === "full" ? "100vw" : "(max-width: 768px) 100vw, 60vw"}
-              />
+              {slide.type === "video" ? (
+                <video
+                  src={slide.url}
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  className="w-full h-full object-cover"
+                />
+              ) : (
+                <Image
+                  src={slide.url}
+                  alt={`${work.title} — slide ${i + 1}`}
+                  fill
+                  className="object-cover"
+                  sizes={slide.layout === "full" ? "100vw" : "(max-width: 768px) 100vw, 60vw"}
+                />
+              )}
             </div>
             {slide.caption && (
               <p className="font-serif text-2xl md:text-3xl font-light text-[#222222] leading-snug mt-10 max-w-xl mx-auto text-center px-10">

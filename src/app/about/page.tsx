@@ -11,12 +11,12 @@ export default function AboutPage() {
     <div className="px-10 py-16">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-start">
         {/* Photo */}
-        <div className="relative aspect-[3/4] overflow-hidden bg-neutral-100">
+        <div className="relative aspect-[3/4] overflow-hidden">
           <Image
-            src="https://picsum.photos/seed/portrait/600/800"
+            src="/assets/dart/Me 2.png"
             alt="Daria Dascal"
             fill
-            className="object-cover"
+            className="object-cover mix-blend-multiply"
             sizes="(max-width: 768px) 100vw, 50vw"
           />
         </div>

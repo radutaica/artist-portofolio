@@ -23,17 +23,13 @@ export default function ContactPage() {
           <div className="flex flex-col gap-4 text-sm">
             <div>
               <p className="text-xs uppercase tracking-widest text-neutral-400">Email</p>
-              <a href="mailto:hello@alexandramoreau.art" className="text-neutral-500 hover:text-neutral-900 transition-colors">
-                hello@alexandramoreau.art
+              <a href="mailto:d.dascal07@gmail.com" className="text-neutral-500 hover:text-[#12273F] transition-colors">
+                d.dascal07@gmail.com
               </a>
             </div>
             <div>
               <p className="text-xs uppercase tracking-widest text-neutral-400">Based in</p>
-              <p className="text-neutral-500">Paris, France</p>
-            </div>
-            <div>
-              <p className="text-xs uppercase tracking-widest text-neutral-400">Available for</p>
-              <p className="text-neutral-500">Commissions, Exhibitions, Collaborations</p>
+              <p className="text-neutral-500">Cluj-Napoca, Romania</p>
             </div>
           </div>
         </div>

@@ -7,7 +7,7 @@ export default function Footer() {
           <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#12273F] transition-colors">
             Instagram
           </a>
-          <a href="mailto:hello@alexandramoreau.art" className="hover:text-[#12273F] transition-colors">
+          <a href="mailto:d.dascal07@gmail.com" className="hover:text-[#12273F] transition-colors">
             Email
           </a>
         </div>

@@ -49,8 +49,8 @@ export default function Navbar() {
 
       {/* Mobile */}
       <div className="md:hidden px-10 h-16 flex items-center justify-between">
-        <Link href="/" className="font-serif text-xl font-light text-[#12273F]">
-          Moreau
+        <Link href="/">
+          <Image src="/assets/dart/logo dart.png" alt="Dart logo" width={40} height={14} className="object-contain h-[14px] w-auto" />
         </Link>
         <button
           className="p-2 text-neutral-700"

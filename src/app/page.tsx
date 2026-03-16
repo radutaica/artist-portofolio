@@ -3,7 +3,7 @@ import GalleryGrid from "@/components/GalleryGrid";
 export default function Home() {
   return (
     <div>
-      <div className="px-10 py-10 flex flex-col gap-6">
+      <div className="px-10 py-10 flex flex-col gap-6 items-center">
         {/* <video
           src="https://w3xdjtdixpgqzl4k.public.blob.vercel-storage.com/Untitled_Artwork9-ezgif.com-gif-to-mp4-converter.mp4"
           autoPlay
@@ -12,7 +12,7 @@ export default function Home() {
           playsInline
           className="w-full h-[55vh] object-contain border border-neutral-200 shadow-lg"
         /> */}
-        <p className="font-serif italic text-sm text-neutral-500 leading-relaxed max-w-xl">
+        <p className="font-serif italic text-sm text-neutral-500 leading-relaxed max-w-xl md:max-w-3xl text-center">
           — Daria Dascal is a visual artist, photographer, and light-chaser based in Paris,
           exploring form, emotion, and the quiet drama of the everyday.
         </p>

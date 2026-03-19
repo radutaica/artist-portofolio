@@ -4,14 +4,45 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
 
-const allLinks = [
+const navLinks = [
   { href: "/", label: "Work" },
-  { href: "/about", label: "About" },
-  { href: "/contact", label: "Contact" },
+  { href: "/about", label: "About me" },
 ];
 
-const leftLinks = allLinks.slice(0, 2);
-const rightLinks = allLinks.slice(2);
+const socialLinks = [
+  {
+    href: "https://www.instagram.com/dartxspace/",
+    label: "Instagram",
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+        <circle cx="12" cy="12" r="4" />
+        <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none" />
+      </svg>
+    ),
+  },
+  {
+    href: "https://www.linkedin.com/in/dariadascal/",
+    label: "LinkedIn",
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+        <rect x="2" y="9" width="4" height="12" />
+        <circle cx="4" cy="4" r="2" />
+      </svg>
+    ),
+  },
+  {
+    href: "mailto:dariadascal.dart@gmail.com",
+    label: "Email",
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="2" y="4" width="20" height="16" rx="2" />
+        <path d="m2 7 10 7 10-7" />
+      </svg>
+    ),
+  },
+];
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -19,31 +50,33 @@ export default function Navbar() {
   return (
     <nav className="bg-background">
       {/* Desktop */}
-      <div className="hidden md:block px-10 h-16">
-        <div className="nav-split w-full h-full">
-          <ul className="nav-left flex gap-8">
-            {leftLinks.map(({ href, label }) => (
-              <li key={href}>
-                <Link href={href} className="text-sm text-neutral-500 hover:text-[#12273F] transition-colors">
-                  {label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-          <div className="nav-logo">
-            <Link href="/">
-              <Image src="/assets/dart/logo dart.png" alt="Dart logo" width={40} height={14} className="object-contain" />
+      <div className="hidden md:flex px-10 h-16 items-center justify-between">
+        {/* Left: Logo + Nav links */}
+        <div className="flex items-center gap-8">
+          <Link href="/">
+            <Image src="/assets/dart/logo dart.png" alt="Dart logo" width={40} height={14} className="object-contain" />
+          </Link>
+          {navLinks.map(({ href, label }) => (
+            <Link key={href} href={href} className="text-sm text-neutral-500 hover:text-[#13273F] transition-colors">
+              {label}
             </Link>
-          </div>
-          <ul className="nav-right flex gap-8">
-            {rightLinks.map(({ href, label }) => (
-              <li key={href}>
-                <Link href={href} className="text-sm text-neutral-500 hover:text-[#12273F] transition-colors">
-                  {label}
-                </Link>
-              </li>
-            ))}
-          </ul>
+          ))}
+        </div>
+
+        {/* Right: Social links */}
+        <div className="flex items-center gap-6">
+          {socialLinks.map(({ href, label, icon }) => (
+            <a
+              key={label}
+              href={href}
+              target={href.startsWith("mailto") ? undefined : "_blank"}
+              rel={href.startsWith("mailto") ? undefined : "noopener noreferrer"}
+              aria-label={label}
+              className="text-neutral-400 hover:text-[#13273F] transition-colors"
+            >
+              {icon}
+            </a>
+          ))}
         </div>
       </div>
 
@@ -70,19 +103,32 @@ export default function Navbar() {
       </div>
 
       {menuOpen && (
-        <ul className="md:hidden bg-background px-10 py-4 flex flex-col gap-4">
-          {allLinks.map(({ href, label }) => (
-            <li key={href}>
-              <Link
-                href={href}
-                onClick={() => setMenuOpen(false)}
-                className="text-sm text-neutral-500 hover:text-[#12273F] transition-colors"
-              >
-                {label}
-              </Link>
-            </li>
+        <div className="md:hidden bg-background px-10 py-4 flex flex-col gap-4">
+          {navLinks.map(({ href, label }) => (
+            <Link
+              key={href}
+              href={href}
+              onClick={() => setMenuOpen(false)}
+              className="text-sm text-neutral-500 hover:text-[#13273F] transition-colors"
+            >
+              {label}
+            </Link>
           ))}
-        </ul>
+          <div className="flex gap-5 pt-2">
+            {socialLinks.map(({ href, label, icon }) => (
+              <a
+                key={label}
+                href={href}
+                target={href.startsWith("mailto") ? undefined : "_blank"}
+                rel={href.startsWith("mailto") ? undefined : "noopener noreferrer"}
+                aria-label={label}
+                className="text-neutral-400 hover:text-[#13273F] transition-colors"
+              >
+                {icon}
+              </a>
+            ))}
+          </div>
+        </div>
       )}
     </nav>
   );
